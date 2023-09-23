@@ -112,6 +112,8 @@ def get_connectivity_aux(g):
 
 def menu():
 
+  print("Mapeamento das fronteiras de países da Europa e América")
+
   g = Graph()
 
   while True:
