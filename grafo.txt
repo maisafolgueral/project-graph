@@ -1,0 +1,228 @@
+2
+88
+0 Albânia-AL
+1 Alemanha-DE
+2 Andorra-AD
+3 Arménia-AM
+4 Áustria-AT
+5 Azerbaijão-AZ
+6 Bélgica-BE
+7 Bielorrússia-BY
+8 Bósnia e Herzegovina-BA
+9 Bulgária-BG
+10 Cazaquistão-KZ
+11 Chipre-CY
+12 Croácia-HR
+13 Dinamarca-DK
+14 Eslováquia-SK
+15 Eslovênia-SI
+16 Espanha-ES
+17 Estónia-EE
+18 Finlândia-FI
+19 França-FR
+20 Geórgia-GE
+21 Grécia-GR
+22 Hungria-HU
+23 Irlanda-IE
+24 Islândia-IS
+25 Itália-IT
+26 Letônia-LV
+27 Liechtenstein-LI
+28 Lituânia-LT
+29 Luxemburgo-LU
+30 Macedônia do Norte-MK
+31 Malta-MT
+32 Moldávia-MD
+33 Mónaco-MC
+34 Montenegro-ME
+35 Noruega-NO
+36 Países Baixos-NL
+37 Polónia-PL
+38 Portugal-PT
+39 Reino Unido-GB
+40 Tchéquia-CZ
+41 Roménia-RO
+42 Rússia-RU
+43 São Marino-SM
+44 Sérvia-RS
+45 Suécia-SE
+46 Suíça-CH
+47 Turquia-TR
+48 Ucrânia-UA
+49 Vaticano-VA
+50 Antígua e Barbuda-AG
+51 Argentina-AR
+52 Bahamas-BS
+53 Barbados-BB
+54 Belize-BZ
+55 Bolívia-BO
+56 Brasil-BR
+57 Canadá-CA
+58 Chile-CL
+59 Colômbia-CO
+60 Costa Rica-CR
+61 Cuba-CU
+62 Dominica-DM
+63 El Salvador-SV
+64 Equador-EC
+65 Estados Unidos-US
+66 Granada-GD
+67 Guatemala-GT
+68 Guiana-GY
+69 Haiti-HT
+70 Honduras-HN
+71 Jamaica-JM
+72 México-MX
+73 Nicarágua-NI
+74 Panamá-PA
+75 Paraguai-PY
+76 Peru-PE
+77 República Dominicana-DO
+78 Santa Lúcia-LC
+79 São Cristóvão e Neves-KN
+80 São Vicente e Granadinas-VC
+81 Suriname-SR
+82 Trindade e Tobago-TT
+83 Uruguai-UY
+84 Venezuela-VE
+85 Guiana Francesa-GF
+86 Gibraltar-GI
+87 Cossovo-XK
+137
+0 21 282.0
+0 30 151.0
+0 34 172.0
+0 87 112.0
+1 4 784.0
+1 6 167.0
+1 40 646.0
+1 13 125.0
+1 19 451.0
+1 29 138.0
+1 36 577.0
+1 37 456.0
+1 46 334.0
+2 19 56.6
+2 16 63.7
+3 5 787.0
+3 20 164.0
+3 47 268.0
+4 40 362.0
+4 22 366.0
+4 25 430.0
+4 27 35.0
+4 14 91.0
+4 15 330.0
+4 46 164.0
+5 20 322.0
+5 42 284.0
+5 47 9.0
+6 19 620.0
+6 29 148.0
+6 36 450.0
+7 26 141.0
+7 28 502.0
+7 37 407.0
+7 42 959.0
+7 48 891.0
+8 12 932.0
+8 34 225.0
+8 44 302.0
+9 21 494.0
+9 30 148.0
+9 41 608.0
+9 44 318.0
+9 47 240.0
+10 42 6846.0
+12 22 329.0
+12 34 25.0
+12 44 241.0
+12 15 670.0
+14 40 215.0
+14 22 677.0
+14 37 444.0
+14 48 97.0
+15 25 232.0
+15 22 102.0
+16 19 623.0
+16 38 1214.0
+16 86 1.2
+17 26 339.0
+17 42 294.0
+18 35 736.0
+18 45 614.0
+18 42 1340.0
+19 25 488.0
+19 29 73.0
+19 33 4.4
+19 46 573.0
+20 42 723.0
+20 47 252.0
+21 47 206.0
+21 30 246.0
+22 41 443.0
+22 44 151.0
+22 48 103.0
+23 39 360.0
+25 43 39.0
+25 46 740.0
+25 49 3.2
+26 28 453.0
+26 42 217.0
+27 46 41.1
+28 37 91.0
+28 42 227.0
+30 44 62.0
+30 87 159.0
+32 41 450.0
+32 48 939.0
+34 44 124.0
+34 87 79.0
+35 45 1619.0
+35 42 196.0
+36 19 10.2
+37 40 658.0
+37 42 206.0
+37 48 526.0
+41 44 476.0
+41 48 531.0
+42 48 1576.0
+44 87 352.0
+51 55 832.0
+51 56 1224.0
+51 58 5308.0
+51 75 1880.0
+51 83 579.0
+54 67 266.0
+54 72 250.0
+55 56 3400.0
+55 58 861.0
+55 75 750.0
+55 76 900.0
+56 59 1643.0
+56 85 673.0
+56 68 1119.0
+56 75 1290.0
+56 76 1560.0
+56 81 597.0
+56 83 985.0
+56 84 2200.0
+57 65 8893.0
+58 76 160.0
+59 64 590.0
+59 74 225.0
+59 76 1496.0
+59 84 2050.0
+60 73 309.0
+60 74 330.0
+63 67 203.0
+63 70 342.0
+64 76 1420.0
+65 72 3141.0
+67 70 256.0
+67 72 962.0
+68 81 600.0
+68 84 743.0
+69 77 360.0
+70 73 922.0
+81 85 510.0
