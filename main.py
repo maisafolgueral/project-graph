@@ -158,4 +158,5 @@ def menu():
         print("Opcao invalida, escolha novamente!")
     except:
       print('Nao foi possivel executar esta opcao!')
+      
 menu()
