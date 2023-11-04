@@ -14,7 +14,7 @@ Description: Implementation the first part project
 
 Date: 2023-11-03
 Author: Filipe, Maisa
-Description: Addded more information about the countries on txt 
+Description: Added more information about the countries on txt 
 '''
 
 from graph import Graph
