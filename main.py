@@ -10,6 +10,11 @@ of the project run.
 History
 Date: 2023-09-20, 2023-09-21, 2023-09-22
 Author: Filipe, Guilherme, Maisa
+Description: Implementation the first part project
+
+Date: 2023-11-03
+Author: Filipe, Maisa
+Description: Addded more information about the countries on txt 
 '''
 
 from graph import Graph
