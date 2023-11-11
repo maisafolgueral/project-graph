@@ -8,9 +8,13 @@ This file implements graph class.
 It is important to take note that
 this is an undirected and weighted graph.
 
-History
 Date: 2023-09-20, 2023-09-21, 2023-09-22
-Author: Filipe, Guilherme, Maisa 
+Author: Filipe, Guilherme, Maisa
+Description: Implementation the first part project
+
+Date: 2023-11-10
+Author: Filipe, Maisa, Guilherme
+Description: Added information on the vertex, implementation the vertex degree, find paths between countries
 '''
 
 from connectivity import Connectivity
@@ -27,7 +31,11 @@ class Graph:
     self.adj = []
     self.vect = []
 
+  
+  def get_vertex_name(self, v):
+    return self.vect[v].name
 
+    
   def count_vertex_edges(self, v):
     edges = 0
     for i in range(self.n):
@@ -36,8 +44,8 @@ class Graph:
     return edges
 
   
-  def insert_vertex(self, name, iso_code):
-    self.vect.append(Vertex(name, iso_code)) # add vertex data
+  def insert_vertex(self, name, iso_code, population, area, population_density, coastline, gdp):
+    self.vect.append(Vertex(name, iso_code, population, area, population_density, coastline, gdp)) # add vertex data
     self.adj.append([math.inf for i in range(self.n+1)]) # add row
     for i in range(self.n):
       self.adj[i].append(math.inf) # add col
@@ -93,9 +101,17 @@ class Graph:
     for i in range(n):
       data = f.readline().strip()
       pos = data.find(' ') # find pos of first space
-      name, iso = data[pos+1:].split('-')
-      self.insert_vertex(name, iso)
-  
+      country_info = data[pos+1:].split(';')
+      self.insert_vertex(
+        name = country_info[0],
+        iso_code = country_info[1],
+        population = country_info[2],
+        area = country_info[3],
+        population_density = country_info[4],
+        coastline = country_info[5],
+        gdp = country_info[6]
+      )
+      
     # extract edge data
     m = int(f.readline().strip()) # number of edges
     for i in range(m):
@@ -140,3 +156,80 @@ class Graph:
       lines[i] += '\n'
     file.writelines(lines)
     file.close()
+
+  
+  def get_vertex_degree(self, v):
+    res = 0
+    for w in range(self.n):
+      if self.adj[v][w] != math.inf:
+        res += 1
+    return res
+
+
+  def find_routes(self, source, destiny):
+    routes = []
+    visited = set()
+    self.dfs(source, destiny, visited, [source], routes)
+    return routes
+
+  
+  def find_best_route(self, source, destiny):
+    routes = self.find_routes(source, destiny)
+    min_length = min(map(len, routes))
+    min_arrays = [arr for arr in routes if len(arr) == min_length]
+    return min_arrays
+
+
+  def dfs(self, current, destiny, visited, current_path, routes):
+    if current == destiny:
+        routes.append(list(current_path))
+        return
+
+    visited.add(current)
+
+    for neighbor in range(self.n):
+      if self.adj[current][neighbor] != math.inf and neighbor not in visited:
+        current_path.append(neighbor)
+        self.dfs(neighbor, destiny, visited, current_path, routes)
+        current_path.pop()
+  
+    visited.remove(current)
+
+
+  def get_neighbors(self, v: int):
+    neighbors = []
+    for w in range(self.n):
+      if self.adj[v][w] == 1:
+        neighbors.append(w)
+    return neighbors
+
+  
+  def find_class_colouring(self):
+    C = [[] for i in range(self.n)] # vetor de classes de cores Ci
+
+    W = [i for i in range(self.n)] # W = V (W variável auxiliar)
+
+    k = 0 # indicador da classe atual de cor
+
+    # Enquanto nem todos os vértices foram inseridos nas classes corretas
+    while(W):
+
+      # Para os vértices que ainda não foram encontradas classes de cores
+      W_aux = W.copy()
+      for i in W:
+
+        # Interseccao
+        n_i = set(self.get_neighbors(i))
+        c_k = set(C[k])
+        intersec = list(n_i.intersection(c_k))
+
+        # Se nenhum vizinho de vi fizer parte da classe atual k 
+        if len(intersec) == 0:
+          C[k].append(i) # O vértice vi pode ser ‘pintado’ com a mesma cor da classe k
+          W_aux.remove(i) # Retira esse vértice vi de W (W eh atualizado na copia para nao ocasionar problemas no loop)
+
+      W = W_aux
+
+      k += 1 # segue para a próxima classe de cores k
+
+    return C
