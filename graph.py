@@ -19,6 +19,7 @@ Description: Added information on the vertex, implementation the vertex degree, 
 
 from connectivity import Connectivity
 from vertex import Vertex
+from colouring import Colouring
 import math
 
 
@@ -196,40 +197,6 @@ class Graph:
     visited.remove(current)
 
 
-  def get_neighbors(self, v: int):
-    neighbors = []
-    for w in range(self.n):
-      if self.adj[v][w] == 1:
-        neighbors.append(w)
-    return neighbors
-
-  
-  def find_class_colouring(self):
-    C = [[] for i in range(self.n)] # vetor de classes de cores Ci
-
-    W = [i for i in range(self.n)] # W = V (W variável auxiliar)
-
-    k = 0 # indicador da classe atual de cor
-
-    # Enquanto nem todos os vértices foram inseridos nas classes corretas
-    while(W):
-
-      # Para os vértices que ainda não foram encontradas classes de cores
-      W_aux = W.copy()
-      for i in W:
-
-        # Interseccao
-        n_i = set(self.get_neighbors(i))
-        c_k = set(C[k])
-        intersec = list(n_i.intersection(c_k))
-
-        # Se nenhum vizinho de vi fizer parte da classe atual k 
-        if len(intersec) == 0:
-          C[k].append(i) # O vértice vi pode ser ‘pintado’ com a mesma cor da classe k
-          W_aux.remove(i) # Retira esse vértice vi de W (W eh atualizado na copia para nao ocasionar problemas no loop)
-
-      W = W_aux
-
-      k += 1 # segue para a próxima classe de cores k
-
-    return C
+  def show_class_colouring(self):
+    c = Colouring(self)
+    c.show_classes()

@@ -157,6 +157,7 @@ def menu():
   g = Graph()
 
   while True:
+    
     print(
       "\n*** MENU DE OPCOES ***\n" +
       "[a] Ler dados do arquivo grafo.txt\n" + 
@@ -169,42 +170,42 @@ def menu():
       "[h] Mostrar grafo\n" + 
       "[i] Apresentar a conexidade\n" + 
       "[j] Obter número de países vizinhos\n" + 
-      "[k] Encontrar caminhos entre países\n" + 
+      "[k] Alcançar país a partir de outro país\n" + 
       "[l] Obter mapas de registro de cores\n" + 
       "[m] Encerrar a aplicação\n"
     )
 
-    #try:
-    option = input("Escolha uma opcao: ").lower()
-    if option == "a":
-      g.makeGraphFromFile('grafo.txt')
-    elif option == "b":
-      g.makeFileFromGraph('grafo.txt')
-    elif option == "c":
-      insert_vertex_aux(g)
-    elif option == "d":
-      insert_edge_aux(g)
-    elif option == "e":
-      remove_vertex_aux(g)
-    elif option == "f":
-      remove_edge_aux(g)
-    elif option == "g":
-      showFileContent('grafo.txt')
-    elif option == "h":
-      g.show_min()
-    elif option == "i":
-      get_connectivity_aux(g)
-    elif option == "j":
-      get_vertex_degree_aux(g)
-    elif option == "k":
-      find_paths_between_countries_aux(g)
-    elif option == "l":
-      print("Obter mapas de registro de cores")
-    elif option == "m":
-      print("Aplicacao encerrada!")
-      break
-    else:
-      print("Opcao invalida, escolha novamente!")
-    #except:
-      #print('Nao foi possivel executar esta opcao!')
+    try:
+      option = input("Escolha uma opcao: ").lower()
+      if option == "a":
+        g.makeGraphFromFile('grafo.txt')
+      elif option == "b":
+        g.makeFileFromGraph('grafo.txt')
+      elif option == "c":
+        insert_vertex_aux(g)
+      elif option == "d":
+        insert_edge_aux(g)
+      elif option == "e":
+        remove_vertex_aux(g)
+      elif option == "f":
+        remove_edge_aux(g)
+      elif option == "g":
+        showFileContent('grafo.txt')
+      elif option == "h":
+        g.show_min()
+      elif option == "i":
+        get_connectivity_aux(g)
+      elif option == "j":
+        get_vertex_degree_aux(g)
+      elif option == "k":
+        find_paths_between_countries_aux(g)
+      elif option == "l":
+        g.show_class_colouring()
+      elif option == "m":
+        print("Aplicacao encerrada!")
+        break
+      else:
+        print("Opcao invalida, escolha novamente!")
+    except:
+      print('Nao foi possivel executar esta opcao!')
 menu()
