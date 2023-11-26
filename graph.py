@@ -21,6 +21,7 @@ from connectivity import Connectivity
 from vertex import Vertex
 from colouring import Colouring
 import math
+import os
 
 
 class Graph:
@@ -94,7 +95,10 @@ class Graph:
 
 
   def makeGraphFromFile(self, filename):
-    f = open(filename, 'r')
+    file_path = os.path.dirname(os.path.abspath(__file__))
+    file_path += f'\{filename}'
+
+    f = open(file_path, 'r')
     f.readline() # skip graph type
     
     # extract vertex data
@@ -123,7 +127,10 @@ class Graph:
 
 
   def makeFileFromGraph(self, filename):
-    file = open(filename, 'w')
+    file_path = os.path.dirname(os.path.abspath(__file__))
+    file_path += f'\{filename}'
+
+    file = open(file_path, 'w')
     lines = []
     lines.append(str(2)) # graph type
     lines.append(str(self.n)) # number of vertices
