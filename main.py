@@ -23,24 +23,27 @@ Description: Added information on the vertex, implementation the vertex degree, 
 
 from graph import Graph
 from tabulate import tabulate
+import os
 
 
 def showFileContent(filename):
-  f = open(filename, 'r')
+  file_path = os.path.dirname(os.path.abspath(__file__))
+  file_path += f'\{filename}'
+  f = open(file_path, 'r')
 
   print('\n\n')
   print('Tipo do Grafo: ', f.readline())
 
   print('\n\n')
   print('Vertices: ')
-  head = ["Indice", "Pais", "Codigo ISO"]
+  head = ["Indice", "Pais", "Cod. ISO", "População", "Área", "Den. Populacional", "Litoral", "PIB"]
   content = []
   n = int(f.readline())
   for i in range(n):
     data = f.readline().strip()
     pos = data.find(' ') # find pos of first space
-    name, iso = data[pos+1:].split('-')
-    content.append([i, name, iso])
+    country_info = data[pos+1:].split(';')
+    content.append([i, country_info[0], country_info[1], country_info[2], country_info[3], country_info[4], country_info[5], country_info[6]])
   print(tabulate(content, headers=head, tablefmt="grid", numalign="left", stralign="left"))
 
   print('\n\n')
@@ -66,7 +69,27 @@ def insert_vertex_aux(g):
     if iso_code == '':
       print('Sigla invalida!')
       continue
-    g.insert_vertex(name, iso_code)
+    population = input("Digite a populacao do pais: ")
+    if population == '':
+      print('População invalida!')
+      continue
+    area = input("Digite a area do pais: ")
+    if area == '':
+      print('População invalida!')
+      continue
+    population_density = input("Digite a densidade populacional do pais: ")
+    if population_density == '':
+      print('Densidade populacional invalida!')
+      continue
+    coastline = input("Digite o litoral do pais: ")
+    if coastline == '':
+      print('Litoral invalido!')
+      continue
+    gdp = input("Digite o PIB do pais: ")
+    if gdp == '':
+      print('PIB invalido!')
+      continue
+    g.insert_vertex(name, iso_code, population, area, population_density, coastline, gdp)
     break
 
 
@@ -119,7 +142,7 @@ def get_connectivity_aux(g):
     print("Conexo")
 
 
-def get_vertex_degree_aux(self, g):
+def get_vertex_degree_aux(g):
   while(True):
     indice = int(input("Digite o indice do pais: "))
     if indice == '':

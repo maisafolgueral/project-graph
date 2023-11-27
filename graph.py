@@ -138,8 +138,13 @@ class Graph:
     # all vertices data
     for i in range(self.n):
       line = str(i) + ' '
-      line += self.vect[i].name + '-'
-      line += self.vect[i].iso_code
+      line += self.vect[i].name + ';'
+      line += self.vect[i].iso_code + ';'
+      line += self.vect[i].population + ';'
+      line += self.vect[i].area + ';'
+      line += self.vect[i].population_density + ';'
+      line += self.vect[i].coastline + ';'
+      line += self.vect[i].gdp
       lines.append(line)
       
     lines.append(str(self.m)) # number of edges
